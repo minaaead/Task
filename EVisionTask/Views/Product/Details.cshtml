@@ -1,0 +1,28 @@
+﻿@model Task.Entity.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <div>
+        @Html.DisplayFor(model => model.Name)
+        <br />
+        @Html.DisplayFor(model => model.Price)$
+        <br />
+        @Html.DisplayFor(model => model.LastUpdated)
+    </div>
+    <div style="float:right">
+        <img src="@Url.Content(Model.Photo)" alt="@Model.Name" width="500" height="300" style="border-radius:50%;" />
+    </div>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
